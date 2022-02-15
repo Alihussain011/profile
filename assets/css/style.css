@@ -1,0 +1,688 @@
+html{
+    scroll-behavior: smooth;
+  }
+  /*  ================variable dicleration ================*/
+  :root{
+    /* bg color */
+     --primary-color:#fd4766 ;    
+     --sec-color: #0e1525; 
+    --bg-dark-blue:#091020;
+     --gray-color: #c6c9d8bf;
+    --gradient-color:linear-gradient(-224deg, var(--primary-color) 0, #337dff 100%);
+    --gradient-text: linear-gradient(120deg, #1c99fe 20.69%, #7644ff 50.19%,var(--primary-color) 79.69%);
+    /* TEXT COLOR */
+    --primary-text:#fd4766;
+    --text-gray:#c6c9d8bf;
+    --text-white:#fff;  
+  }
+  /*----------genral css-------*/
+  body
+  {
+      color: #272829;
+      background-color: var(--bg-dark-blue);
+  }
+  h1,h2,h3,h4,h5,h6
+  {
+      font-family: "arvo", slab-serif;
+      /* font-family: 'Tangerine', serif;/* font-size: 18px;  */
+      /*color:var(--primary-text);*/
+      
+  }
+  p{
+    color: var(--text-gray);
+    font-family: "arvo", slab-serif;
+    font-size: 20px;
+  }
+  /* =================== header section css ===================*/
+#header
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9997;
+  transition: all 0.5s;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+ @media screen and  (max-width: 992px) {
+     #header {
+     width: 300px;
+     background:rgba(0, 0, 0, 0.8);
+     left: -300px;
+   }   
+    .nav-menu  li a, .nav-menu  li a:focus {
+      width: 56px;
+    } 
+    .nav-menu a span, .nav-menu a:focus span {
+      display: none;
+      color: var(--text-white);
+    } 
+  }
+  .nav-menu {
+    position: relative;
+    top: 25%;
+    padding: 0;
+    display: block;
+  }
+  .nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .nav-menu > ul > li {
+    position: relative;
+    white-space: nowrap;
+  }
+  .nav-menu a, .nav-menu a:focus {
+    display: flex;
+    align-items: center;
+    color: var(--text-gray);
+    padding: 10px 18px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+    border-radius: 50px;
+    background: var(--bg-dark-blue);
+    height: 56px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.3s;
+    text-decoration: none;
+  }
+  .nav-menu a i, .nav-menu a:focus i {
+    font-size: 24px;
+  }
+
+  .nav-menu a span, .nav-menu a:focus span {
+    padding: 0 5px 0 7px;
+    color: var(--text-white);
+  }
+  @media (min-width: 992px) {
+     .nav-menu a, .nav-menu a:focus {
+      width: 56px;
+    } 
+    .nav-menu a span, .nav-menu a:focus span {
+      display: none;
+      color: var(--text-white);
+    } 
+  }
+  .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus, .nav-menu li:hover > a {
+    color: var(--text-white);
+    background: var(--primary-color);
+  }
+  .nav-menu a:hover span, .nav-menu .active span, .nav-menu .active:focus span, .nav-menu li:hover > a span {
+    color: var(--text-white);
+  }
+  .nav-menu a:hover, .nav-menu li:hover > a {
+    width: 100%;
+    color: var(--text-white);
+  }
+  .nav-menu a:hover span, .nav-menu li:hover > a span {
+    display: block;
+  }
+.nav-menu a:hover{
+   transform: scale(1.1);
+   transition: ease-in-out 0.3s;
+  }
+  /*=====mobile navigation======*/
+.mobile-nav-toggle {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+    border: 0;
+    background: none;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none !important;
+    line-height: 1;
+    cursor: pointer;
+    text-align: right;
+  }
+  .mobile-nav-toggle i{
+    color: #149ddd;
+  }
+  /*  =================== scroll btn css ==================*/
+#scroll-btn{
+    position: fixed;
+    right: 15px;
+    bottom: 55px;
+    z-index: 9998;
+    border: none;
+    background: none;
+    transition: all 0.4s;
+    outline: none !important;
+    cursor: pointer;
+    animation: anime1 2s infinite;
+  }
+  #scroll-btn i{
+    font-size: 50px;
+  }
+  @keyframes anime1 {
+    0%{
+     margin-top: 15px;
+      transition: all ease-in-out 1s;
+     }
+     50%{
+      margin-bottom: 15px;
+      transition: all ease-in-out 1s;
+    }  
+   
+     100%{
+       margin-top: 15px;
+       transition: all ease-in-out 1s;
+     }
+  }
+  
+  @media (max-width:992px) {
+    #scroll-btn i{
+      font-size: 30px;
+    } 
+  }
+  /*========= Hero section ===========*/
+  #hero{
+    width: 100%;
+    height: 100vh;
+    background: url(../img/4.jpg) ;
+    background-size: cover;
+  }
+  /*  -- before --  */
+  #hero::before{
+    content: "";
+    background: rgba(0,0,0,0.4);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  #hero .hero-container{
+    position: relative;
+    z-index: 2;
+    min-width: 300px;
+  }
+  #hero h1{
+    margin: 0 0 10px 0;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 56px;
+    
+    color: #fff;
+  }
+  #hero p{
+    color: #fff;
+    margin-bottom: 56px;
+    font-family: 'Tangerine', serif;   font-size: 46px;
+   
+  }
+  #hero p span{
+    color:red;
+  }
+  
+  /* --------- make it responsive -----*/
+  
+  @media (min-width:1024px){
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  @media (max-width:768px) {
+    #hero h1{
+      font-size: 48px;
+      line-height: 36px;
+    }
+    #hero p {
+      font-size: 28px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+  }
+  /*================== about ===============*/
+  
+  /* ===about aniamtion for dot */
+  
+  .spinner-grow{
+    background: var(--gradient-text);
+  }
+  
+  #about .col-lg-8 .row{
+    padding-top: 30px;
+  }
+  #about .col-lg-8 .row ul li{
+    padding-bottom: 40px;
+  }
+  /* end about css */
+  /*=========== skill bar section =============*/
+  .skills .progress {
+      height: 60px;
+      display: block;
+      background: none;
+      border-radius: 0;
+    }
+    .skills .progress .skill {
+      padding: 0;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+      display: block;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+      color: var(--primary-text);
+    }
+    .skills .progress .skill .val {
+      float: right;
+      font-style: normal;
+    }
+    .skills .progress-bar-wrap {
+      background: var(--bg-dark-blue);
+      height: 10px;
+    }
+    .progress span i {
+      color: var(--primary-text);
+    }
+    .progress .skill b{
+    color: var(--primary-text);
+  }
+    /*===== progress bass animation ====*/
+    /*= ------ width 635px = 100% ------ =*/
+    .skills #html {
+      width: 635px;
+      height: 10px;
+      transition: 0.9s;
+      background: var(--gradient-color);
+      animation: html 2s 1s 1;
+    }
+    .skills #css {
+      width: 571px;
+      height: 10px;
+      transition: 0.9s;
+      background: var(--gradient-color);
+      animation: css 2s 1s 1;
+    }
+    .skills #js {
+      width: 127px;
+      height: 10px;
+      transition: 0.9s;
+      background: var(--gradient-color);
+      animation: js 2s 1s 1;
+    }
+    .skills #c {
+      width: 571px;
+      height: 10px;
+      transition: 0.9s;
+      background: var(--gradient-color);
+      animation: c 2s 1s 1;
+    }
+    .skills #boot {
+      width: 508px;
+      height: 10px;
+      transition: 0.9s;
+      background: var(--gradient-color);
+      animation: boot 2s 1s 1;
+    }
+    .skills #ps {
+      width: 349px;
+      height: 10px;
+      transition: 0.9s;
+      background: var(--gradient-color);
+      animation: ps 2s 1s 1;
+    }
+    @keyframes html {
+      0%{
+        width: 0px;
+      }
+      100%{
+        width: 635px;
+      }
+    }
+    @keyframes css {
+      0%{
+        width: 0px;
+      }
+      100%{
+        width: 571px;
+      }
+    }
+    @keyframes js {
+      0%{
+        width: 0px;
+      }
+      100%{
+        width: 127px;
+      }
+    }
+    @keyframes c {
+      0%{
+        width: 0px;
+      }
+      100%{
+        width: 571px;
+      }
+    }
+    @keyframes boot {
+      0%{
+        width: 0px;
+      }
+      100%{
+        width: 508px;
+      }
+    }
+    @keyframes ps {
+      0%{
+        width: 0px;
+      }
+      100%{
+        width: 349px;
+      }
+    }
+  
+    /*======== resume css ========== */
+    .resume .resume-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      color: var(--primary-text);
+    }
+    .resume .resume-item {
+      padding: 0 0 20px 20px;
+      margin-top: -2px;
+      border-left: 2px solid var(--primary-text);
+      position: relative;
+    }
+    .resume .resume-item h4 {
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--text-white);
+      margin-bottom: 10px;
+    }
+    .resume .resume-item h5 {
+      font-size: 16px;
+      background: var(--gradient-text);
+      color: var(--text-white);
+      padding: 5px 15px;
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .resume .resume-item ul {
+      padding-left: 20px;
+    }
+    .resume .resume-item ul li {
+      padding-bottom: 10px;
+    }
+    .resume .resume-item:last-child {
+      padding-bottom: 0;
+    }
+    .resume .resume-item::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50px;
+      left: -9px;
+      top: 0;
+      background: var(--gradient-text);
+      border: 2px solid black;
+    }
+    #resume ul li{
+      color: var(--text-gray);
+    }
+  
+  /* hobbies css */
+  #hobbies .row p{
+    font-size: 18px;
+  }
+  #hobbies .row .col-lg-4 p{
+    color: black;
+  }
+  
+  /* end hobbies */
+  /*--------------------------------------------------------------
+  # Portfolio
+  --------------------------------------------------------------*/
+  
+  .box-item {
+    margin-bottom: 30px;
+  }
+  #portfolio-flters {
+    padding: 0;
+    margin: 0 auto 35px auto;
+    list-style: none;
+    text-align: center;
+    background: var(--primary-color);
+    border-radius: 50px;
+    padding: 2px 15px;
+  }
+  #portfolio-flters li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 15px 8px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--text-white);
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  #portfolio-flters li:hover,#portfolio-flters li.mixitup-control-active {
+    color: var(--sec-color);
+  }
+  #portfolio-flters li:last-child {
+    margin-right: 0;
+  }
+  
+  .box-item .wrap {
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .box-item .wrap::before {
+    content: "";
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all ease-in-out 0.3s;
+    z-index: 2;
+    opacity: 0;
+  }
+  .box-item .wrap .link{
+    opacity: 1;
+    left: 0;
+    right: 0;
+    bottom: -60px;
+    z-index: 3;
+    position: absolute;
+    transition: all ease-in-out 0.3s;
+    display: flex;
+    justify-content: center;
+  }
+  .box-item .wrap .link a{
+    color: #fff;
+    font-size: 28px;
+    text-align: center;
+    background: rgba(245, 37, 37, 0.774);
+    transition: 0.3s;
+    width: 50%;
+  }
+  .box-item .wrap .link a:hover {
+    background: rgba(245, 37, 37, 0.774);
+  }
+  .box-item .wrap .link a + a {
+    border-left: 1px solid rgba(245, 37, 37, 0.774);
+  }
+  .box-item .wrap:hover::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+  }
+  .box-item .wrap:hover .link {
+    opacity: 1;
+    bottom: 0;
+  }
+  
+  /* === contact section ==== */
+  /* about info csss*/
+  #form{
+    background: var(--sec-color);
+    border-radius: 15px;
+  }
+  .form-group  label{
+    padding: 15px 0;
+    color: var(--primary-text)
+  }
+  form .btn{
+    margin-top: 15px;
+    background: var(--primary-color);
+    color: var(--sec-color);
+    border: none;
+  }
+  .about .content h3{
+      font-weight: 700;
+      font-size: 26px;
+      color: var(--primary-text);
+  }
+  .about .content ul{
+      list-style: none;
+      padding: 0;
+  }
+  .about .content ul li{
+      padding-bottom: 10px;
+  }
+  .about .content ul li div{
+      margin-right: 5px;
+  }
+  .about .content p:last-child
+  {
+      margin-bottom: 0;
+  }
+  .about strong {
+    color:var(--text-white)
+  }
+  .about span{
+    color: var(--text-gray);
+  }
+  #contact-logo div .bi{
+    font-size: 18px;
+    color:var(--text-white);
+  } 
+  .contact #contact-logo{
+    padding: 20px;
+  }
+  .contact #contact-logo h4{
+    color: var(--primary-text);
+  }
+  /*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+  section {
+    padding: 80px 0;
+    overflow: hidden;
+  }
+  
+  .section-bg {
+    background: var(--sec-color);
+  }
+  
+  .section-title {
+    padding-bottom: 30px;
+  }
+  .section-title h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: var(--primary-text);
+  }
+  .section-title h1::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 150px;
+    height: 3px;
+    background: var(--gradient-color);
+    bottom: 0;
+    left: 0;
+    animation: anime 2s 1;
+  }
+  @keyframes anime {
+    0%{
+      width: 1px;
+    }
+    100%{
+      width: 150px;
+    }
+    
+  }
+  .section-title p {
+    margin-bottom: 0;
+  }
+  /* ============== footer section css ============= */
+  footer{
+    width: 100%;
+    background: #090d1ab9;
+  }
+  footer  
+  {
+    padding-top: 40px;
+  }
+  footer .container ul li{
+    
+    margin: 8px 15px;
+    list-style: none;
+  }
+  
+  footer .container ul li a i{
+    color: #fff;
+    background: #1c99fe;
+    border-radius: 20%;
+    padding: 10px;
+    font-size: 25px;
+    transition: ease-in-out 0.3s;
+  }
+  footer .container ul li:hover{
+   
+    transition: ease-in-out 0.3s;
+    transform: scale(1.2);
+  }
+  footer .container ul li a .bi-facebook{
+    color: #fff;
+    background: #0984e3;
+  }
+  footer .container ul li a .bi-instagram{
+    color: #fff;
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+  }
+  footer .container ul li a .bi-youtube{
+    background: #fff;
+    color: rgb(255, 0, 0);
+  }
+  footer .footer-copyright{
+    background: var(--primary-color);
+    padding: 10px 0;
+    color: var(--sec-color);
+  }
+  footer .container-fluid li{
+    margin: 10px;
+    list-style: none;
+  }
+  footer .container-fluid li a{
+    font-size: 18px;
+    font-weight: 200;
+    color: var(--primary-text);
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  
